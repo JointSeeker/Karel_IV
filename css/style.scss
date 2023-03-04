@@ -1,0 +1,1056 @@
+$primary-color: rgba(20, 20, 20, 0.733);
+$secondary-color: antiquewhite;
+$base-color: rgb(70,70,70);
+$second-color: rgb(130,130,130);
+$third-color: rgb(170,170,170);
+
+@import url(https://fonts.googleapis.com/css2?family=Jura:wght@500&display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Jura', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 12px;
+    background-color: #303030;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    background-color: #303030;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0); 
+    background-color: #bfbfbf;
+}
+
+body {
+    background-color: #303030;
+    overflow-x: hidden;
+
+}
+
+#loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader > svg {
+    max-width: 600px;
+    margin: 0 100px;
+    fill: rgb(255, 255, 255);
+    animation: fill-up 2s forwards;
+}
+
+@keyframes fill-up {
+    0% {
+    fill: rgb(255, 255, 255);
+    }
+    100% {
+    fill: goldenrod;
+    }
+}
+
+  
+  /* animace přeskočení na stránku */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  
+  #myDiv {
+    display: none;
+  }
+
+
+// pole navigace
+// header {
+//     height: 8vh;
+//     position: relative;
+// }
+
+.navigace {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.733);
+    z-index: 999999;
+}
+
+.navigace > .moje-logo {
+    padding-left: 2vw;
+}
+
+.navigace > .moje-logo > a {
+    width: 200px;
+    text-decoration: none;
+}
+
+.navigace > .moje-logo > a > svg {
+    width: 160px;
+    fill: goldenrod;
+}
+
+
+.navigace > nav > .moje-nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navigace > nav > .moje-nav-menu > li {
+    margin-right: 2vw;
+}
+
+.navigace > nav > .moje-nav-menu > li > a {
+    color: $secondary-color;
+    font-size: 25px;
+    position: relative;
+    text-decoration: none;
+}
+
+// // animace podtržení
+
+.navigace > nav > .moje-nav-menu > li > a:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $secondary-color;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+}
+
+.navigace > nav > .moje-nav-menu > li > a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}  
+
+
+////////////////////////
+/// 
+/* Hero items */
+
+
+.carousel-item{
+    width: 100%;
+    height: 100vh;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url(../img/kuchaři.png);
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url(../img/prkno_s_bylinkama.jpg);
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url(../img/steak.jpg);
+}
+
+
+
+.carousel-caption{
+    position: absolute;
+    right: 0;
+    margin-right: 15%;
+    left: 0;
+    margin-left: 15%;
+    bottom: 35vh;
+    text-shadow: 2px top black;
+}
+
+.carousel-caption h5{
+    font-size: 45px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    font-family: 'Jura';
+}
+
+.carousel-caption p{
+    color: black;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.9;
+    font-family: 'Jura', sans-serif;
+    backdrop-filter: none;
+}
+
+.glass{
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2),
+                0px 5px 10px white;
+
+    background-color: rgba(255, 255, 255, 0.103);
+    backdrop-filter: blur(5px) saturate(100%) contrast(50%) brightness(130%);
+    font-size: 2rem;
+    overflow: hidden;
+}
+/////////////////////////////////////
+/// 
+/// 
+///             ///  Button animace
+/// 
+/// 
+/// ////////////////////////
+.button1 {
+    position: relative;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid #303030;
+    background: $primary-color;
+    letter-spacing: 2px;
+    font-size: 25px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+   }
+   
+.button1:hover {
+    box-shadow: 0 0 10px $base-color, 0 0 25px $third-color, 0 0 50px $base-color;
+    transition-delay: 0.6s;
+    background: $third-color;
+   }
+
+.button1 > a:hover {
+    color: $primary-color;
+}
+   
+.button1 span {
+    position: absolute;
+   }
+
+.button1 > a {
+    text-decoration: none;
+    color: $secondary-color;
+
+}
+   
+.button1 span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $third-color);
+   }
+   
+.button1:hover span:nth-child(1) {
+    left: 100%;
+    transition: 0.7s;
+   }
+   
+.button1 span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $third-color);
+   }
+   
+.button1:hover span:nth-child(3) {
+    right: 100%;
+    transition: 0.7s;
+    transition-delay: 0.35s;
+   }
+   
+.button1 span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $third-color);
+   }
+   
+.button1:hover span:nth-child(2) {
+    top: 100%;
+    transition: 0.7s;
+    transition-delay: 0.17s;
+   }
+   
+.button1 span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, $third-color);
+   }
+   
+.button1:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 0.7s;
+    transition-delay: 0.52s;
+   }
+   
+.button1:active {
+    background: $base-color;
+    background: linear-gradient(to top right, $base-color, $third-color);
+    color: #bfbfbf;
+    box-shadow: 0 0 8px $base-color, 0 0 8px $third-color, 0 0 8px $base-color;
+    transition: 0.1s;
+   }
+   
+.button1:active span:nth-child(1) 
+   span:nth-child(2) 
+   span:nth-child(2) 
+   span:nth-child(2) {
+    transition: none;
+    transition-delay: none;
+   }
+
+   /////////////////////////////////////////////////////////
+   /// ////////////////////////////////////////////////
+   /// ///////////////////////////////////////////
+
+
+   //////////// Foodlist Jídelní lístek
+   /// 
+#foodList {
+    width: 100vw;
+    height: 100%;
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+   }
+
+.food-list {
+    text-align: center;
+    opacity: 0;
+    padding-top: 8vh;
+    color: $primary-color;
+    transition: opacity 1.2s ease;
+}
+
+.food-list.show {
+    opacity: 1;
+}
+
+.food-list > h2 {
+    text-decoration: underline;
+}
+
+.week-menu {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.day-menu {
+    opacity: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    transform: translateX(100%);
+    transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.day-menu:nth-of-type(even) {
+    transform: translateX(-100%);
+}
+
+.day-menu.show {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.day-menu > h3 {
+    align-self: flex-start;
+    text-decoration: underline;
+
+}
+
+.day-menu > .food-items {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text > .food-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-item > p {
+    padding: 3px;
+}
+
+.food-item > .price {
+    word-break: keep-all;
+    width: 50px;
+    height: 25px;
+    margin: 0;
+    background: $primary-color;
+    color: $secondary-color;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+////////////////////
+/// 
+///    AboutUs sekce o nás
+
+#aboutUs {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+}
+
+.about-us {
+    margin-top: 12vh;
+    margin-bottom: 10vh;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.about-us > h2 {
+    text-align: center;
+}
+
+.about-us > .bio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+    margin: 0 10vw;
+    transform: scale(0) translateX(-100%);
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+
+.about-us > .bio:nth-of-type(even) {
+    transform: scale(0) translate(100%);
+}
+
+.about-us > .bio.show {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+.about-us > .bio:nth-child(2) {
+    margin-top: 10vh;
+    flex-direction: row-reverse;
+}
+
+.about-us > .bio > img {
+    margin: 0 30px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 5px $secondary-color;
+    object-fit: cover;
+}
+
+
+////////////////////
+/// 
+/// sekce Galerie
+/// 
+
+#gallery {
+    background-color: $secondary-color;
+}
+
+.my-gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-gallery > .header {
+    text-align: center;
+    color: $primary-color;
+    margin-top: 12vh;
+
+}
+
+.my-gallery > .photos {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.my-gallery > .photos > .image-link {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 10px;
+    transition: all .5s ease-in;
+    border: 2px solid grey; 
+    transform: translateX(100%) scale(0);
+    opacity: 0;
+    transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.my-gallery > .photos > .image-link:nth-of-type(even) {
+    transform: translateX(-100%) scale(0);
+}
+
+.my-gallery > .photos > .image-link.show {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.my-gallery > .photos > .image-link > .image {
+    width: 200px;
+    height: 200px;
+}
+
+
+.my-gallery > .photos > .image-link:hover {
+    box-shadow: 5px 5px 8px rgba(71, 71, 71, 0.877);
+}
+
+
+
+///////////////////
+/// 
+///    Sekce kontakt
+////////
+
+#contact {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+}
+
+.contact {
+    margin-top: 10vh;
+    width: 100%;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact > .con-address {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form > form {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    font-size: 30px;
+}
+
+.form > form > input {
+    height: 40px;
+    width: 100%;
+    font-size: 15px;
+    padding: 0 10px;
+    border: 2px solid rgb(116, 121, 116);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.form > form > textarea {
+    width: 100%;
+    font-size: 15px;
+    padding: 0 10px;
+    border: 2px solid rgb(116, 121, 116);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.form form .button2 input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background: #3b3b3b;
+    color: #c4c4c4;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.form form .button2 input:hover {
+    box-shadow: 0 1px 5px 5px rgba(87, 178, 253, 0.76),
+                0 -1px 5px 5px rgba(87, 178, 253, 0.76);
+    transition: all 0.3s ease-in-out;
+}
+
+.form > form > input:hover,
+.form > form > input:focus {
+    box-shadow: 0 -1px 5px 3px rgba(153, 153, 153, 0.76),
+                0 1px 5px 3px rgba(238, 238, 238, 0.76);
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+.form > form > textarea:hover,
+.form > form > textarea:focus {
+    box-shadow: 0 -1px 5px 3px rgba(153, 153, 153, 0.76),
+                0 1px 5px 3px rgba(238, 238, 238, 0.76);
+    transition: all 0.2s ease-in-out;
+    border: none;
+}
+
+.map {
+    margin-top: 40px;
+    width: 100%;
+    height: 40vh;
+}
+
+
+
+
+
+////// socialni site
+/// 
+
+
+.social-sites {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.social-sites > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.social-sites > div > p {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.social-sites > div > p > a {
+    text-decoration: none;
+    color: $secondary-color;
+}
+
+.social-sites > div > .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: $secondary-color;
+    border-radius: 50px;
+    margin: 2vh 0;
+    font-size: 30px;
+    color: $primary-color;
+}
+
+
+
+//////////////////
+/// 
+///       Footer
+/// 
+/// ////////////////
+
+footer {
+    width: 100%;
+    height: 4vh;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > p {
+    font-size: 25px;
+    font-weight: 400; 
+    margin-top: 10px;
+    padding: 0;
+}
+
+footer > p > span {
+    font-weight: 700;
+    color: green;
+}
+
+
+
+
+///////////////////////////////////////////////////
+///       media query
+///////////////////////////
+/// 
+/// 
+
+@media only screen and (max-width: 1600px){
+
+
+    ///         galerie     /////////////
+    /// 
+    
+    
+    // .my-gallery > .photos {
+    //     display: grid;
+    //     grid-template-columns: auto auto auto auto;
+    //     justify-items: center;
+    // }
+
+    ///// contact /////////
+    /// 
+
+    .con-address {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+
+// hamburgrové menu
+
+.navigace {
+    width: 100vw;
+}
+
+.navigace > nav > .hamburger > .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: $secondary-color;
+}
+
+.navigace > nav > .hamburger {
+    display: block;
+    margin-right: 3vw;
+    cursor: pointer;
+}
+
+.navigace > nav > .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navigace > nav > .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navigace > nav > .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navigace > nav > .moje-nav-menu {
+    position: fixed;
+    top: -100%;
+    right: 0;
+    gap: 0;
+    flex-direction: column;
+    background-color: $primary-color;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.navigace > nav > .moje-nav-menu > li {
+    margin-bottom: 10px;
+}
+
+.navigace > nav > .moje-nav-menu.active {
+    width: 100%;
+    top: 0 + 7.9vh;
+}
+
+
+// uvodni obrazovka "Uvod"
+
+.carousel-item{
+    height: 100vh;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.carousel-caption{
+    bottom: 25vh;
+    text-shadow: 2px top black;
+}
+
+
+
+
+////////////////////
+/// 
+/// 
+/// 
+/// 
+
+.about-us {
+    margin-top: 11vh;
+}
+
+
+.about-us > .bio {
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us > .bio:nth-child(2) {
+    flex-direction: column;
+}
+
+.about-us > .bio > img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5vh;
+}
+
+
+.about-us > .bio:nth-child(1) > img:nth-child(1) {
+    margin-top: 10vh;
+}
+
+.about-us > .bio:nth-child(2) {
+    margin-top: 5vh;
+}
+
+
+////////// galerie ////////
+
+
+.my-gallery > .photos {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+}
+
+
+
+
+
+@media only screen and (max-width: 600px){
+
+
+
+    .carousel-item:nth-child(1) > .glass:nth-child(1) {
+        bottom: 15vh;
+    }
+
+    ///         galerie     /////////////
+    /// 
+    
+    
+    
+
+    .my-gallery > .photos {
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;
+    }
+
+    .form > form {
+    width: 80vw;
+    }
+
+    .social-sites > div > p {
+        font-size: 20px;
+    }
+    
+    .social-sites {
+        margin-top: 30px;
+    }
+
+    .social-sites > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    
+    .social-sites > div > .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        margin: 10px 0;
+        font-size: 20px;
+        color: $primary-color;
+    }
+
+    .week-menu {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10vh;
+    }
+
+    .food-item > p {
+        width: 80%;
+    }
+
+    .food-item > .price {
+        width: 50px;
+        height: 25px;
+        margin: 0;
+        background: $primary-color;
+        color: $secondary-color;
+        padding: 3px;
+        border-radius: 3px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 420px){
+
+    .navigace {
+        width: 100vw;
+    }
+
+    .navigace > .moje-logo {
+        width: max-content;
+    }
+
+    .navigace > .moje-logo > a > img{
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-item:nth-child(1) > .glass:nth-child(1) {
+        bottom: 25vh;
+        overflow: hidden;
+    }
+
+    .carousel-caption h5{
+        font-size: 30px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-top: 25px;
+        font-family: 'Jura';
+        backdrop-filter: blur(0px);
+    }
+    
+    .carousel-caption p{
+        color: rgb(22, 22, 22);
+        margin: auto;
+        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 1;
+        font-family: 'Jura', sans-serif;
+        backdrop-filter: blur(0px);
+    }
+
+    .week-menu {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
