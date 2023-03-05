@@ -1,7 +1,7 @@
 <!-- Sekce o nás -->
 <section id="aboutUs">
     <div class="about-us" onscroll="checkAboutUs()">
-        <h2>O restauraci U Karla</h2>
+        <h2>O restauraci</h2>
         <div class="bio" >
             <img src="img/ji.jpg" alt="">
             <span class="text">
