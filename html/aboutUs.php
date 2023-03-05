@@ -3,7 +3,7 @@
     <div class="about-us" onscroll="checkAboutUs()">
         <h2>O restauraci U Karla</h2>
         <div class="bio" >
-            <img src="img/jirka.jpg" alt="">
+            <img src="img/ji.jpg" alt="">
             <span class="text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Hic alias repellendus rerum voluptatum tenetur eius dolorem
@@ -15,7 +15,7 @@
             </span>
         </div>
         <!-- <div class="bio">
-            <img src="img/borat.jpg" alt="">
+            <img src="img/bo.jpg" alt="">
             <span class="text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Hic alias repellendus rerum voluptatum tenetur eius dolorem
